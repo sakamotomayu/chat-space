@@ -1,0 +1,47 @@
+#chat
+  .create_chat
+    %p チャットグループが作成されました
+  .chat
+    .chat-side
+      .chat-myaccount
+        .chat-myaccount__user
+          %span mayu
+        .chat-myaccount__action
+          -#link_to _path, :method => : do
+          %i.fa.fa-pencil-square-o.fa-lg
+          -#link_to _path, :method => : do
+          %i.fa.fa-cog.fa-lg
+      .chat-group
+        .chat-group__name
+          %p springグループ
+        .chat-group__message
+          %p まだメッセージがありません
+        .chat-group__name
+          %p summerグループ
+        .chat-group__message
+          %p まだメッセージがありません
+    .chat-space
+      .chat-header
+        .chat-header__left
+          .chat-header__left--group
+            %h2 sampleグループ
+          .chat-header__left--member
+            %p Members:
+        .chat-header__right
+          .chat-header__right--edit-btn
+            %a{:href => "リンク"}Edit
+      .chat-body
+        .foo
+          %span.chat-body__user
+            mayu
+          %span.chat-body__time
+            = Time.now
+        .chat-body__message
+          %span テスト
+      .chat-footer
+        .chat-footer__message
+          %textarea{:type => "textarea", :name => "text", :id => "aaa"}
+          %input{:type => "file", :name => "image", :id => "aaa"}
+          -#link_to _path, :method => : do
+          %i.fa.fa-picture-o.fa-lg
+          %input{:type => "submit", :value => "Send", :id => "aaa", :name => "send"}
