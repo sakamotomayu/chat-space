@@ -29,7 +29,7 @@
             %p Members:
         .chat-header__right
           .chat-header__right--edit-btn
-            %a{:href => "リンク"}Edit
+            %a{ :href => "リンク" }Edit
       .chat-body
         .foo
           %span.chat-body__user
@@ -40,8 +40,9 @@
           %span テスト
       .chat-footer
         .chat-footer__message
-          %textarea{:type => "textarea", :name => "text", :id => "aaa"}
-          %input{:type => "file", :name => "image", :id => "aaa"}
+          %textarea{ :type => "textarea", :name => "text", :id => "aaa", :placeholder => "type a message" }
+          %input{ :type => "file", :name => "image", :id => "aaa" }
           -#link_to _path, :method => : do
           %i.fa.fa-picture-o.fa-lg
-          %input{:type => "submit", :value => "Send", :id => "aaa", :name => "send"}
+        .chat-footer__send
+          %input{ :type => "submit", :value => "Send", :id => "aaa", :name => "send" }

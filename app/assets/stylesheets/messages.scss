@@ -1,19 +1,20 @@
 #chat{
   min-width: 960px;
+  height: 100%;
   .create_chat {
-  	background-color: #38AEF0;
-  	color: white;
+    background-color: #38AEF0;
+    color: white;
     p {
-  	text-align: center;
+  	  text-align: center;
   	}
   }
 
   .chat {
     min-width: 960px;
     height: 100%;
-    .chat-side {
-      width: 300px;
+    &-side {
       height: 100vh;
+      width: 300px;
       color: #fff;
       background-color: #2f3e51;
       float: left;
@@ -56,7 +57,7 @@
         height: 100px;
         padding-left: 40px;
         padding-right: 40px;
-        border-bottom: 1px solid #eeeeee;
+        border-bottom: 1px solid #eee;
         &__left {
           &--group {
             padding-top: 20px;
@@ -66,7 +67,7 @@
           }
           &--member {
             font-size: 12px;
-            color: #999999;
+            color: #999;
             line-height: 20px;
           }
         }
@@ -88,15 +89,15 @@
           }
         }
       }
+
       .chat-body {
         position: relative;
         padding-left: 40px;
         padding-right: 40px;
-        height: calc(100% - 190px);
-        float: left;
-        background-color: #AAAAAA;
+        height: 520px;
+        background-color: #AAA;
         .foo {
-          margin-top: 46px;
+          padding-top: 46px;
           span.chat-body__user {
             font-size: 16px;
             font-weight: bold;
@@ -114,41 +115,49 @@
             margin: 10px 0 40px 0;
         }
       }
+
       .chat-footer {
-        padding: 20px 40px;
+        width: calc(100% - 300px);
+        padding: 20px 0;
         position: absolute;
-        bottom: 0;
-        background-color: #dddddd;
+        bottom: -24px;
+        right: 0;
+        background-color: #ddd;
         &__message {
-          padding: 20px 10px;
+          padding: 0 0 0 40px;
           display: inline-block;
           textarea {
             display: inline-block;
             height: 20px;
-            width: 470px;
+            width: 100%;
             border-style: none;
             resize: none;
             padding: 15px 10px;
+            color: #434A54;
+            font-size: 16px;
           }
           input[type='file'] {
             display: none;
           }
           i {
-            background-color: #ffffff;
+            background-color: #fff;
             position: absolute;
-            top: 40px;
-            right: 205px;
+            top: 20px;
+            right: 165px;
             padding: 15px 10px 19px 10px;
           }
+        }
+        &__send {
           input[type='submit'] {
-            color: #ffffff;
+            width: 100px;
+            height: 50px;
+            color: #fff;
             background-color: #38AEF0;
             border-style: none;
             display: inline-block;
             position: absolute;
-            top: 40px;
-            right: 120px;
-            padding: 14px 15px 12px 15px;
+            top: 20px;
+            right: 50px;
           }
         }
       }
