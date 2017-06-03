@@ -7,10 +7,10 @@
         .chat-myaccount__user
           %span mayu
         .chat-myaccount__action
-          -#link_to _path, :method => : do
-          %i.fa.fa-pencil-square-o.fa-lg
-          -#link_to _path, :method => : do
-          %i.fa.fa-cog.fa-lg
+          =link_to '/new' do
+            %i.fa.fa-pencil-square-o.fa-lg
+          =link_to '/edit' do
+            %i.fa.fa-cog.fa-lg
       .chat-group
         .chat-group__name
           %p springグループ
@@ -28,8 +28,8 @@
           .chat-header__left--member
             %p Members:
         .chat-header__right
-          .chat-header__right--edit-btn
-            %a{ :href => "リンク" }Edit
+          .chat-header__right--edit__btn
+            =link_to 'Edit', '_path', class: "edit_btn"
       .chat-body
         .foo
           %span.chat-body__user
@@ -40,9 +40,9 @@
           %span テスト
       .chat-footer
         .chat-footer__message
-          %textarea{ :type => "textarea", :name => "text", :id => "aaa", :placeholder => "type a message" }
-          %input{ :type => "file", :name => "image", :id => "aaa" }
+          %textarea{ type: "textarea", name: "text", id: "aaa", placeholder: "type a message", class: "textarea" }
+          %input{ type: "file", name: "image", id: "aaa", class: "file" }
           -#link_to _path, :method => : do
           %i.fa.fa-picture-o.fa-lg
         .chat-footer__send
-          %input{ :type => "submit", :value => "Send", :id => "aaa", :name => "send" }
+          %input{ type: "submit", value: "Send", id: "aaa", name:  "send", class: "submit"}

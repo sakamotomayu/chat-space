@@ -1,13 +1,23 @@
+$light-blue: #38aef0;
+$white: #ffffff;
+$very-deep-blue: #2f3e51;
+$deep-blue: #253141;
+$gray1: #aaaaaa;
+$gray2: #999999;
+$gray3: #dddddd;
+$light-gray: #eeeeee;
+$deep-gray: #333333;
+$neary-black: #434a54;
+
+
 #chat{
   min-width: 960px;
   height: 100%;
   .create_chat {
     position: absolute;
-    background-color: #38AEF0;
+    background-color: $light-blue;
     color: white;
-    p {
-  	  text-align: center;
-  	}
+  	text-align: center;
   }
 
   .chat {
@@ -16,11 +26,11 @@
     &-side {
       height: 100vh;
       width: 300px;
-      color: #fff;
-      background-color: #2f3e51;
+      color: $white;
+      background-color: $very-deep-blue;
       float: left;
       .chat-myaccount {
-        background-color: #253141;
+        background-color: $deep-blue;
         font-weight: bold;
         height: 100px;
         line-height: 100px;
@@ -30,15 +40,18 @@
           float: left;
         }
         &__action {
-            padding-right: 20px;
-            display: inline-block;
-            float: right;
+          padding-right: 20px;
+          display: inline-block;
+          float: right;
+          .fa {
+            color: $white;
+          }
         }
       }
     }
 
       .chat-group {
-        background-color: #2f3e51;
+        background-color: $very-deep-blue;
         padding: 20px;
         &__name {
           font-size: 15px;
@@ -58,22 +71,21 @@
         height: 100px;
         padding-left: 40px;
         padding-right: 40px;
-        border-bottom: 1px solid #eee;
+        border-bottom: 1px solid $light-gray;
         &__left {
           &--group {
             padding-top: 20px;
             font-size: 20px;
-            color: #333333;
+            color: $deep-gray;
             line-height: 50px;
           }
           &--member {
             font-size: 12px;
-            color: #999;
+            color: $gray2;
             line-height: 20px;
           }
         }
-        &__right {
-          &--edit-btn {
+        &__right--edit__btn {
             font-size: 14px;
             display: inline-block;
             position: absolute;
@@ -82,13 +94,14 @@
             padding: 0 20px;
             margin: 28px 0;
             line-height: 40px;
-            border: solid 2px #38AEF0;
-            a {
+            border: solid 2px $light-blue;
+            color: $light-blue;
+            text-decoration: none;
+            .edit_btn {
+              color: $light-blue;
               text-decoration: none;
-              color: #38AEF0;
             }
           }
-        }
       }
 
       .chat-body {
@@ -96,23 +109,23 @@
         padding-left: 40px;
         padding-right: 40px;
         height: calc(100vh - 197px);
-        background-color: #AAA;
+        background-color: $gray1;
         .foo {
           padding-top: 46px;
           span.chat-body__user {
             font-size: 16px;
             font-weight: bold;
-            color: #434A54;
+            color: $neary-black;
           }
           span.chat-body__time {
             margin-left: 12px;
-            color: #999999;
+            color: $gray2;
             font-size: 12px;
           }
         }
         &__message {
             font-size: 14px;
-            color: #434A54;
+            color: $neary-black;
             margin: 10px 0 40px 0;
         }
       }
@@ -122,27 +135,27 @@
         padding: 20px 0;
         position: absolute;
         right: 0;
-        background-color: #ddd;
+        background-color: $gray3;
         &__message {
           margin-left: 40px;
           display: inline-block;
           width: 80%;
           min-width: calc(100% - 240px);
           max-width: calc(100% - 240px);
-          textarea {
+          .textarea {
             width: 100%;
             display: inline-block;
             height: 20px;
             border-style: none;
             resize: none;
             padding: 15px 10px;
-            color: #434A54;
+            color: $neary-black;
             font-size: 16px;
           }
-          input[type='file'] {
+          .file {
             display: none;
           }
-          i {
+          .fa {
             position: absolute;
             top: 20px;
             right: 180px;
@@ -150,11 +163,11 @@
           }
         }
         &__send {
-          input[type='submit'] {
+          .submit {
             width: 100px;
             height: 56px;
-            color: #fff;
-            background-color: #38AEF0;
+            color: $white;
+            background-color: $light-blue;
             border-style: none;
             display: inline-block;
             position: absolute;
@@ -163,6 +176,7 @@
           }
         }
       }
+
     }
   }
 }
