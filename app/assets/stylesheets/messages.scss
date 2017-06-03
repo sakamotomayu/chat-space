@@ -124,12 +124,15 @@
         right: 0;
         background-color: #ddd;
         &__message {
-          padding: 0 0 0 40px;
+          margin-left: 40px;
           display: inline-block;
+          background-color: #fff;
+          width: 80%;
+          min-width: calc(100% - 240px);
+          max-width: calc(100% - 240px);
           textarea {
             display: inline-block;
             height: 20px;
-            width: 100%;
             border-style: none;
             resize: none;
             padding: 15px 10px;
@@ -140,17 +143,17 @@
             display: none;
           }
           i {
-            background-color: #fff;
             position: absolute;
             top: 20px;
             right: 165px;
-            padding: 15px 10px 19px 10px;
+            padding: 20px 10px;
+            background-color: #fff;
           }
         }
         &__send {
           input[type='submit'] {
             width: 100px;
-            height: 50px;
+            height: 56px;
             color: #fff;
             background-color: #38AEF0;
             border-style: none;
