@@ -29,9 +29,9 @@
             %p Members:
         .chat-header__right
           .chat-header__right--edit__btn
-            =link_to 'Edit', '_path', class: "edit_btn"
+            =link_to 'Edit', '_path', class: 'edit_btn'
       .chat-body
-        .foo
+        .chat-body__main
           %span.chat-body__user
             mayu
           %span.chat-body__time
@@ -40,9 +40,9 @@
           %span テスト
       .chat-footer
         .chat-footer__message
-          %textarea{ type: "textarea", name: "text", id: "aaa", placeholder: "type a message", class: "textarea" }
-          %input{ type: "file", name: "image", id: "aaa", class: "file" }
+          %textarea{ type: 'textarea', name: 'text', id: 'aaa', placeholder: 'type a message', class: 'textarea' }
+          %input{ type: 'file', name: 'image', id: 'aaa', class: 'file' }
           -#link_to _path, :method => : do
           %i.fa.fa-picture-o.fa-lg
         .chat-footer__send
-          %input{ type: "submit", value: "Send", id: "aaa", name:  "send", class: "submit"}
+          %input{ type: 'submit', value: 'Send', id: 'aaa', name:  'send', class: 'submit'}

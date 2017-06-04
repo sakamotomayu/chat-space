@@ -10,7 +10,7 @@ $deep-gray: #333333;
 $neary-black: #434a54;
 
 
-#chat{
+#chat {
   min-width: 960px;
   height: 100%;
   .create_chat {
@@ -86,22 +86,22 @@ $neary-black: #434a54;
           }
         }
         &__right--edit__btn {
-            font-size: 14px;
-            display: inline-block;
-            position: absolute;
-            top: 1px;
-            right: 40px;
-            padding: 0 20px;
-            margin: 28px 0;
-            line-height: 40px;
-            border: solid 2px $light-blue;
+          font-size: 14px;
+          display: inline-block;
+          position: absolute;
+          top: 1px;
+          right: 40px;
+          padding: 0 20px;
+          margin: 28px 0;
+          line-height: 40px;
+          border: solid 2px $light-blue;
+          color: $light-blue;
+          text-decoration: none;
+          .edit_btn {
             color: $light-blue;
             text-decoration: none;
-            .edit_btn {
-              color: $light-blue;
-              text-decoration: none;
-            }
           }
+        }
       }
 
       .chat-body {
@@ -110,23 +110,23 @@ $neary-black: #434a54;
         padding-right: 40px;
         height: calc(100vh - 197px);
         background-color: $gray1;
-        .foo {
+        &__main {
           padding-top: 46px;
-          span.chat-body__user {
+          .chat-body__user {
             font-size: 16px;
             font-weight: bold;
             color: $neary-black;
           }
-          span.chat-body__time {
+          .chat-body__time {
             margin-left: 12px;
             color: $gray2;
             font-size: 12px;
           }
         }
         &__message {
-            font-size: 14px;
-            color: $neary-black;
-            margin: 10px 0 40px 0;
+          font-size: 14px;
+          color: $neary-black;
+          margin: 10px 0 40px 0;
         }
       }
 
