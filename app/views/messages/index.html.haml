@@ -1,48 +1,48 @@
-#chat
-  .create_chat
+.chat
+  .chat__notice
     %p チャットグループが作成されました
-  .chat
-    .chat-side
-      .chat-myaccount
-        .chat-myaccount__user
+  .chat__space
+    .chat__space__side
+      .chat__space__side__account
+        .chat__space__side__account__user
           %span mayu
-        .chat-myaccount__action
-          =link_to '/new' do
+        .chat__space__side__account--action
+          = link_to '/new' do
             %i.fa.fa-pencil-square-o.fa-lg
-          =link_to '/edit' do
+          = link_to '/edit' do
             %i.fa.fa-cog.fa-lg
-      .chat-group
-        .chat-group__name
+      .chat__space__side__group
+        .chat__space__side__group__name
           %p springグループ
-        .chat-group__message
+        .chat__space__side__group__message
           %p まだメッセージがありません
-        .chat-group__name
+        .chat__space__side__group__name
           %p summerグループ
-        .chat-group__message
+        .chat__space__side__group__message
           %p まだメッセージがありません
-    .chat-space
-      .chat-header
-        .chat-header__left
-          .chat-header__left--group
+    .chat__space__main
+      .chat__space__main__header
+        .chat__space__main__header__left
+          .chat__space__main__header__left__group
             %h2 sampleグループ
-          .chat-header__left--member
+          .chat__space__main__header__left__member
             %p Members:
-        .chat-header__right
-          .chat-header__right--edit__btn
+        .chat__space__main__header__right
+          .chat__space__main__header__right--edit__btn
             =link_to 'Edit', '_path', class: 'edit_btn'
-      .chat-body
-        .chat-body__main
-          %span.chat-body__user
+      .chat__space__main__body
+        .chat__space__main__body__main
+          %span.chat__space__main__body__main__user
             mayu
-          %span.chat-body__time
+          %span.chat__space__main__body__main__time
             = Time.now
-        .chat-body__message
+        .chat__space__main__body__message
           %span テスト
-      .chat-footer
-        .chat-footer__message
-          %textarea{ type: 'textarea', name: 'text', id: 'aaa', placeholder: 'type a message', class: 'textarea' }
+      .chat__space__main__footer
+        .chat__space__main__footer__message
+          ~ text_area type: 'textarea', name: 'text', id: 'aaa', placeholder: 'type a message', class: 'textarea'
           %input{ type: 'file', name: 'image', id: 'aaa', class: 'file' }
           -#link_to _path, :method => : do
           %i.fa.fa-picture-o.fa-lg
-        .chat-footer__send
+        .chat__space__main__footer__send
           %input{ type: 'submit', value: 'Send', id: 'aaa', name:  'send', class: 'submit'}
