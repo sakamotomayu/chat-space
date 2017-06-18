@@ -2,7 +2,7 @@
   color: $white;
   text-align: center;
   &__alert{
-    background-color: red;
+    background-color: $red;
   }
   &__notice {
     background-color: $light-blue;
