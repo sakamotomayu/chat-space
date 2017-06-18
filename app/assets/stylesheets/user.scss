@@ -1,24 +1,24 @@
 .account-page {
-  .account-page__inner {
+  &__inner {
     width: 980px;
     margin: 60px auto;
     padding: 60px;
-    background-color: #fff;
-    border: 1px solid #ddd;
+    background-color: $white;
+    border: 1px solid $gray3;
     border-radius: 5px;
 
-    .account-page__inner--left, .account-page__inner--right {
+    &--left, --right {
       float: left;
       width: 50%;
     }
     &:after {
       clear: both;
-      content: "";
+      content: '';
       display: block;
     }
   }
 
-  .account-page__header {
+  &__header {
     h2 {
       margin-bottom: 10px;
       letter-spacing: 3px;
@@ -30,7 +30,7 @@
         display: block;
         width: 60px;
         margin-top: 5px;
-        border-bottom: 1px solid #38aef0;
+        border-bottom: 1px solid $light-blue;
       }
     }
 
@@ -42,8 +42,8 @@
 
     .btn {
       margin-top: 20px;
-      color: #fff;
-      background-color: #ccc;
+      color: $white;
+      background-color: $light-gray2;
       font-size: 14px;
     }
   }
@@ -51,7 +51,7 @@
   .field {
     margin-bottom: 10px;
 
-    .field-label {
+    &-label {
       padding: 10px 0;
       letter-spacing: 1px;
       font-size: 14px;
@@ -62,7 +62,7 @@
       }
     }
 
-    .field-input {
+    &-input {
       input {
         width: 100%;
         padding: 10px;
@@ -85,20 +85,20 @@
   input[type='submit'] {
     float: left;
     margin-top: 20px;
-    color: #fff;
-    background-color: #38aef0;
+    color: $white;
+    background-color: $light-blue;
   }
 
-  .field-label {
-    .field_with_errors {
+  &-label {
+    &_with_errors {
       display: inline-block;
-      color: #d65f4c;
+      color: $light-red;
       font-weight: 400;
     }
   }
 
-  .field-input {
-    .field_with_errors {
+  &-input {
+    &_with_errors {
       position: relative;
 
       &:after {
@@ -109,7 +109,7 @@
         right: 0;
         bottom: 0;
         width: 5px;
-        background-color: #d65f4c;
+        background-color: $light-red;
       }
     }
   }
@@ -118,12 +118,12 @@
 #error_explanation {
   margin: 20px 0;
   padding: 20px 30px;
-  border: 1px solid #ddd;
+  border: 1px solid $gray3;
   border-radius: 2px;
 
   h2 {
     margin-bottom: 10px;
-    color: #d65f4c;
+    color: $light-red;
     font-size: 14px;
   }
 
