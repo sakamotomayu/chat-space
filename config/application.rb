@@ -8,9 +8,6 @@ Bundler.require(*Rails.groups)
 
 module ChatSpace
   class Application < Rails::Application
-    config.generators do |g|
-      g.test_framework false
-    end
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
@@ -25,7 +22,13 @@ module ChatSpace
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
-    config.generators.helper = false
     config.i18n.default_locale = :ja
+
+    config.generators do |g|
+      g.test_framework false
+      g.javascripts false
+      g.helper false
+      g.assets false
+    end
   end
 end
