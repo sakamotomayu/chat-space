@@ -6,6 +6,7 @@ class UsersController < ApplicationController
 
   def update
     current_user.update(update_params)
+    redirect_to "/groups/#{@message.group.id}"
   end
 
   private
