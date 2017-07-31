@@ -13,13 +13,11 @@
             %i.fa.fa-cog.fa-lg
       .chat__space__side__group
         .chat__space__side__group__name
-          %p springグループ
+          = group.name
         .chat__space__side__group__message
-          %p まだメッセージがありません
-        .chat__space__side__group__name
-          %p summerグループ
-        .chat__space__side__group__message
-          %p まだメッセージがありません
+          = group.messages.last.try(:text)
+          - if group.messages.last.try(:text).blank?
+            まだメッセージがありません
     .chat__space__main
       .chat__space__main__header
         .chat__space__main__header__left
@@ -29,7 +27,7 @@
             %p Members:
         .chat__space__main__header__right
           .chat__space__main__header__right--edit__btn
-            =link_to 'Edit', '_path', class: 'edit_btn'
+            =link_to 'Edit', '/groups/1/edit', class: 'edit_btn'
       .chat__space__main__body
         .chat__space__main__body__main
           %span.chat__space__main__body__main__user
