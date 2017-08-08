@@ -25,4 +25,4 @@
       .chat-group-form__field--left
       .chat-group-form__field--right
         = f.collection_check_boxes :group, :user_ids, User.all, :id, :name
-          = text_field id: 'chat-group-form__action-btn' , data: { disable_with: 'Save' } , name: 'commit' , type: 'submit' , value: 'Save'
+          = f.submit 'SEND', class: 'chat-group-form__action-btn'
