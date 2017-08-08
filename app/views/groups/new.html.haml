@@ -1,11 +1,6 @@
 .chat-group-form
   %h1 新規チャットグループ
-  = form_for(@group , id: 'new_chat_group' , accept-charset: 'UTF-8')
-    .chat-group-form__errors
-      %h2
-        1件のエラーが発生しました。
-        %ul
-          %li エラーです
+  = form_for(@group , id: 'new_chat_group')
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
         = f.label id: 'chat-group-form__label' , for: 'chat_group_name' , name: 'グループ名'
