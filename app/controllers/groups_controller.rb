@@ -28,5 +28,4 @@ class GroupsController < ApplicationController
     params.permit(:text)
   end
 
-
 end
