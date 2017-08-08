@@ -1,6 +1,6 @@
 .chat-group-form
   %h1 新規チャットグループ
-  = form_for(@group , id: 'new_chat_group')
+  = form_for @group do |f|
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
         = f.label id: 'chat-group-form__label' , for: 'chat_group_name' , name: 'グループ名'
@@ -20,4 +20,4 @@
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
       .chat-group-form__field--right
-        = text_field id: 'chat-group-form__action-btn' , data: { disable_with: 'Save' } , name: 'commit' , type: 'submit' , value: 'Save'
+        = f.submit 'SEND', class: 'chat-group-form__action-btn'
