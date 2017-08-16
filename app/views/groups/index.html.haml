@@ -1,11 +1,10 @@
 .chat
-  .chat__notice
-    %p チャットグループが作成されました
   .chat__space
     .chat__space__side
       .chat__space__side__account
         .chat__space__side__account__user
-          %span mayu
+          %span
+            = current_user.name
         .chat__space__side__account--action
           = link_to '/new' do
             %i.fa.fa-pencil-square-o.fa-lg
@@ -18,29 +17,4 @@
           = group.messages.last.try(:text)
           - if group.messages.last.try(:text).blank?
             まだメッセージがありません
-    .chat__space__main
-      .chat__space__main__header
-        .chat__space__main__header__left
-          .chat__space__main__header__left__group
-            %h2 sampleグループ
-          .chat__space__main__header__left__member
-            %p Members:
-        .chat__space__main__header__right
-          .chat__space__main__header__right--edit__btn
-            = link_to edit_group_path , class: 'edit_btn'
-      .chat__space__main__body
-        .chat__space__main__body__main
-          %span.chat__space__main__body__main__user
-            mayu
-          %span.chat__space__main__body__main__time
-            = Time.now
-        .chat__space__main__body__message
-          %span テスト
-      .chat__space__main__footer
-        .chat__space__main__footer__message
-          %textarea{ type: 'textarea', name: 'text', id: 'aaa', placeholder: 'type a message', class: 'textarea' }
-          %input{ type: 'file', name: 'image', id: 'aaa', class: 'file' }
-          -#link_to _path, :method => : do
-          %i.fa.fa-picture-o.fa-lg
-        .chat__space__main__footer__send
-          %input{ type: 'submit', value: 'Send', id: 'aaa', name:  'send', class: 'submit'}
+

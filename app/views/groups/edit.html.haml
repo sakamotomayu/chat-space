@@ -12,17 +12,18 @@
                     = message
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
-        =f.label id: 'chat-group-form__label' , for: 'chat_group_name' , name: 'グループ名'
+        =f.label :グループ名
       .chat-group-form__field--right
-          = f.text_field id: 'chat-group-form__input' , name: 'chat_group[name]' , placeholder: 'グループ名を入力してください', type: 'text' , value: 'ほげー'
+          = f.text_field :name, class: 'chat-group-form__input' , placeholder: 'グループ名を入力してください'
     .chat-group-form__field.clearfix
       / この部分はインクリメンタルサーチ（ユーザー追加の非同期化のときに使用します
       /
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
-        = text_field id: 'chat-group-form__label' , for: 'chat_group_チャットメンバー' , name: 'チャットメンバー'
+        = f.label :チャットメンバー
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
       .chat-group-form__field--right
         = f.collection_check_boxes :group, :user_ids, User.all, :id, :name
           = f.submit 'SEND', class: 'chat-group-form__action-btn'
+

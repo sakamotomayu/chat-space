@@ -1,0 +1,33 @@
+.chat
+  .chat__space
+    .chat__space__main
+      .chat__space__main__header
+        .chat__space__main__header__left
+          .chat__space__main__header__left__group
+            %h2
+              = @group.name
+          .chat__space__main__header__left__member
+            %p Members:
+              = render partial: 'message/message' , collection: @users
+        .chat__space__main__header__right
+          .chat__space__main__header__right--edit__btn
+            = link_to edit_group_path , class: 'edit_btn'
+      .chat__space__main__body
+        .chat__space__main__body__main
+          %span.chat__space__main__body__main__user
+            = message.group.name
+          %span.chat__space__main__body__main__time
+            = message.created_at.to_s(:datatime)
+        .chat__space__main__body__message
+          %span
+            = simple_format(message.text)
+            - message.try(:image)
+            = image_tag message.image
+      .chat__space__main__footer
+        .chat__space__main__footer__message
+          = form_for [@group, @message] do |f|
+            = f.text_area :content, placeholder: 'type a message'
+          %i.fa.fa-picture-o.fa-lg
+            = f.file_field :image, class: 'file'
+        .chat__space__main__footer__send
+          = f.submit 'SEND'

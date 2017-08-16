@@ -1,19 +1,28 @@
 class MessagesController < ApplicationController
 
-  def create
-    @message = Group.new(message_params)
-    #if @message.save
-      #redirect_to group_messages_url(group), notice: 'グループを作成しました'
-    #else
-      #flash.now[:alert] = 'グループ名を入力してください'
-      #render :new
-    #end
+  before_action :authenticate_user!, only: :create
+
+  def index
+    @group = Group.find(params[:group_id])
+    @groups = current_user.groups
+    @message = Message.new
+    @users = @group.users
   end
 
-  #private
+  def create
+    @message = current_user.messages.new(create_params)
+    if @message.save
+      redirect_to group_messages_url(params[:group_id]), notice: 'メッセージを入力しました'
+    else
+      flash.now[:alert] = 'メッセ―ジを入力してください'
+      render :new
+    end
+  end
 
-  #def message_params
-    #params.require(:message).permit(:text , :group_id)
-  #end
+  private
+
+  def create_params
+    params.require(:message).permit(:text, :image).merge(group_id: params[:group_id])
+  end
 
 end
