@@ -6,15 +6,9 @@
           %span
             = current_user.name
         .chat__space__side__account--action
-          = link_to '/new' do
+          = link_to new_group_path do
             %i.fa.fa-pencil-square-o.fa-lg
-          = link_to '/edit' do
+          = link_to edit_user_path(current_user) do
             %i.fa.fa-cog.fa-lg
       .chat__space__side__group
-        .chat__space__side__group__name
-          = group.name
-        .chat__space__side__group__message
-          = group.messages.last.try(:text)
-          - if group.messages.last.try(:text).blank?
-            まだメッセージがありません
-
+        = render partial: :group, collection: @groups, as: :group

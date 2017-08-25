@@ -1,0 +1,43 @@
+.chat
+  .chat__space
+    .chat__space__side
+      .chat__space__side__account
+        .chat__space__side__account__user
+          %span
+            = current_user.name
+        .chat__space__side__account--action
+          = link_to new_group_path do
+            %i.fa.fa-pencil-square-o.fa-lg
+          = link_to edit_user_path(current_user) do
+            %i.fa.fa-cog.fa-lg
+      .chat__space__side__group
+        = render partial: :group, collection: @groups, as: :group
+    .chat__space__main
+      .chat__space__main__header
+        .chat__space__main__header__left
+          .chat__space__main__header__left__group
+            %h2
+              = @group.group_name
+          .chat__space__main__header__left__member
+            = render partial: 'messages/message' , collection: @users, as: :user
+        .chat__space__main__header__right
+          .chat__space__main__header__right--edit__btn
+            = link_to edit_group_path(@group) , class: 'edit_btn' do
+              Edit
+      .chat__space__main__body
+        .chat__space__main__body__main
+        - @messages.each do |message|
+          %span.chat__spac_e__main__body__main__user
+            = message.user.name
+          %span.chat__space__main__body__main__time
+            = message.created_at.to_s(:datatime)
+          .chat__space__main__body__message
+            %span
+              = message.text
+      .chat__space__main__footer
+        .chat__space__main__footer__message
+          = form_for [@group, @message] do |f|
+            = f.text_area :text, placeholder: 'type a message', class: 'chat__space__main__footer__message'
+            = f.file_field :image, class: 'file', style: 'display:none'
+            %i.fa.fa-picture-o.fa-lg
+            = f.submit :SEND, class: 'chat__space__main__footer__send'
