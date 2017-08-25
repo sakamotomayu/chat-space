@@ -39,6 +39,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails', "~> 4.4.1"
   gem 'faker'
+  gem 'rake', '< 11.0'
 end
 
 group :development do
@@ -54,3 +55,6 @@ gem 'devise'
 gem 'haml-rails'
 gem 'font-awesome-rails'
 gem 'carrierwave'
+gem 'mini_magick'
+gem 'fog'
+
