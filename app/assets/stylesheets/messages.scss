@@ -42,6 +42,10 @@
       &__group {
         background-color: $very-deep-blue;
         padding: 20px;
+      a {
+        color: $white;
+        text-decoration: none;
+      }
         &__name {
           font-size: 15px;
           padding-bottom: 5px;
@@ -55,7 +59,7 @@
     &__main {
       float: left;
       width: calc(100% - 300px);
-      height: 100%;
+      height: 100vh;
       &__header {
         height: 100px;
         padding: 0 40px;
@@ -71,6 +75,10 @@
             font-size: 12px;
             color: $gray2;
             line-height: 20px;
+            display: inline-block;
+            &__name {
+              display: inline-block;
+            }
           }
         }
         &__right--edit__btn {
@@ -99,7 +107,10 @@
         height: calc( 100vh - #{$header-footer-height} );
         background-color: $gray1;
         &__main {
-          padding-top: 46px;
+          padding: 20px;
+          position: relative;
+          top: -500px;
+          left: 40px;
           &__user {
             font-size: 16px;
             font-weight: bold;
@@ -110,11 +121,11 @@
             color: $gray2;
             font-size: 12px;
           }
-        }
-        &__message {
-          font-size: 14px;
-          color: $neary-black;
-          margin: 10px 0 40px;
+          &__message {
+            font-size: 14px;
+            color: $neary-black;
+            margin: 10px 0 40px;
+          }
         }
       }
       &__footer {
@@ -126,10 +137,10 @@
         background-color: $gray3;
         display: inline-block;
         &__message {
-          margin-left: 40px;
+          margin-left: 20px;
           display: inline-block;
-          width: calc(100% - 240px);
-          .textarea {
+          width: calc(100% - 230px);
+          textarea {
             width: 100%;
             height: 20px;
             resize: none;
@@ -138,18 +149,13 @@
             font-size: 16px;
             border-style: none;
           }
-          .file {
-            display: none;
-          }
-          .fa {
+          i {
             position: absolute;
             top: 20px;
             right: 180px;
             padding: 20px 10px;
           }
-        }
-        &__send {
-          .submit {
+          input {
             border-style: none;
             width: 100px;
             height: 56px;
